@@ -33,7 +33,23 @@ did not work reliably – on a current Mac, not at all. All we wanted was to sav
 | Install firmware, with a no-changes rehearsal first | ✓ | ✓ |
 | Runs natively on Apple-silicon Macs, no account, no network unless you ask | ✓ | – |
 
-## Get it running
+## Download
+
+1. From [**Releases**](https://github.com/trelaf/NobleLink/releases/latest), download
+   `NobleLink-…-macOS.zip`. It runs on macOS 13 or later, Apple silicon and Intel.
+2. Open the zip and drag **NobleLink** into your *Applications* folder.
+3. **First launch only:** the app isn't notarized by Apple (that needs a paid developer account), so
+   macOS will refuse it at first with *"Apple could not verify NobleLink is free of malware"*.
+   Click **Done**, then open **System Settings → Privacy & Security**, scroll down to
+   *"NobleLink was blocked…"*, click **Open Anyway** and confirm. After that it opens normally.
+
+   Prefer Terminal? This does the same: `xattr -dr com.apple.quarantine /Applications/NobleLink.app`
+
+The command-line tool is a separate download, `noble-…-macOS.zip`: unzip it, then run
+`xattr -d com.apple.quarantine noble` once and `./noble help`. Each release lists SHA-256
+checksums if you want to verify the files.
+
+## Build it yourself
 
 Needs macOS 13+ and Xcode or just the Command Line Tools (`xcode-select --install`).
 
@@ -43,6 +59,8 @@ cd NobleLink/NobleLink
 ./scripts/build_app.sh        # → dist/NobleLink.app and dist/noble
 open dist/NobleLink.app
 ```
+
+## Use it
 
 Connect the transmitter with a USB data cable, switch it on, and keep the receiver (car) switched
 off – the transmitter refuses model transfers while a receiver is linked.

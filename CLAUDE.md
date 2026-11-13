@@ -26,7 +26,8 @@ NobleLink/                      Swift package (macOS 13+, no third-party depende
   Sources/NobleSelfTest/        test runner (plain executable, see below)
   Fixtures/                     stand-ins for FlySky's catalogue files, used by the tests
   Resources/AppIcon.icns
-  scripts/build_app.sh          release build + .app bundle
+  scripts/build_app.sh          universal release build + .app bundle (version lives here)
+  scripts/package_release.sh    zips + SHA256SUMS for a GitHub release
   scripts/check_app_logic.sh    headless checks of the app's restore plan and install flow
 docs/PROTOCOL.md                protocol, formats, firmware update – with sources
 tools/                          reverse-engineering helpers (Ghidra scripts, decompiler-output cleaners)
@@ -42,6 +43,9 @@ swift build
 ./scripts/build_app.sh                        # dist/NobleLink.app, dist/noble
 ```
 
+- Releases: bump `VERSION` in `scripts/build_app.sh`, run `./scripts/package_release.sh` (universal
+  arm64 + x86_64, ad-hoc signed, not notarized) and publish `dist/release/*` with
+  `gh release create vX.Y.Z`. Binaries go in releases, never in the repository.
 - The toolchain may be the Command Line Tools only: **no XCTest / swift-testing** (hence
   `NobleSelfTest` is an executable) and **no SwiftUI `@State`** (macro plugin missing) – keep view
   state as `@Published` properties on `AppModel`.
