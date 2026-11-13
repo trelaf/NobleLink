@@ -1,0 +1,18 @@
+# Publish only our own work. FlySky's installer, firmware, decompiled code,
+# analysis output, personal backups and logs stay local.
+/*
+!/.gitignore
+!/README.md
+!/CLAUDE.md
+!/LICENSE
+!/docs/
+!/tools/
+!/icon/
+/icon/*
+!/icon/NobleLink-icon-master-v3.png
+!/icon/NobleLink-v3.icns
+!/NobleLink/
+/NobleLink/.build/
+/NobleLink/dist/
+.DS_Store
+.swiftpm/
