@@ -9,7 +9,8 @@ edit and rearrange them, restore them, and install firmware updates – without 
 > (Claude), working with a human who tested it on a real Noble NB4+ (EN, FCC build): backup,
 > restore with moved and renamed models, and a firmware update from 1.0.22 to 1.0.31. Factory reset
 > and the in-app installer have so far only run against the built-in simulators. Not affiliated with
-> FlySky; use at your own risk – but it is careful (see *Safety*).
+> FlySky; use at your own risk. NobleLink does back up your transmitter before every change and
+> verifies what it writes – see *Safety*.
 
 ## Why
 
