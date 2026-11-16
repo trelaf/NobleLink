@@ -4,7 +4,7 @@
 set -eu
 cd "$(dirname "$0")/.."
 
-VERSION="1.0.0"
+VERSION="1.0.1"
 
 # Universal binaries: Apple silicon and Intel.
 swift build -c release --arch arm64 --arch x86_64
@@ -28,7 +28,7 @@ cat > "$APP/Contents/Info.plist" <<PLIST
     <key>CFBundleExecutable</key><string>NobleLink</string>
     <key>CFBundlePackageType</key><string>APPL</string>
     <key>CFBundleShortVersionString</key><string>$VERSION</string>
-    <key>CFBundleVersion</key><string>2</string>
+    <key>CFBundleVersion</key><string>3</string>
     <key>CFBundleIconFile</key><string>AppIcon</string>
     <key>LSMinimumSystemVersion</key><string>13.0</string>
     <key>NSHighResolutionCapable</key><true/>
